@@ -1,0 +1,6 @@
+.DS_Store
+yarn.lock
+extension/dist
+dist/
+node_modules/
+META-INF/

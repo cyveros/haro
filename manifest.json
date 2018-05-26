@@ -1,0 +1,42 @@
+{
+   "background": {
+      "scripts": [
+        "js/agb_basic.js",
+        "js/agb_common.js",
+        "js/agb_main.js",
+        "js/agb_para.js",
+        "js/agb_init.js",
+        "js/agb_chrome.js",
+        "dist/background.js"
+      ]
+   },
+   "content_scripts": [ {
+      "js": [ "js/basics.js", "js/common.js", "js/overlays.js", "js/main.js", "js/init.js" ],
+      "matches": [ "http://*.ogame.gameforge.com/game/index.php*", "https://*.ogame.gameforge.com/game/index.php*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "js/basics.js", "js/common.js", "js/init.js" ],
+      "matches": [ "http://www.osimulate.com/*", "http://websim.speedsim.net/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "skin/board.css" ],
+      "include_globs": [ "http://board.??.ogame.gameforge.com/*" ],
+      "matches": [ "http://*.ogame.gameforge.com/*", "https://*.ogame.gameforge.com/*" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "homepage_url": "https://antigame.de",
+   "icons": {
+      "128": "Icon-128.png",
+      "16": "Icon-16.png",
+      "48": "Icon-48.png"
+   },
+   "manifest_version": 2,
+   "minimum_chrome_version": "32",
+   "name": "AntiGameOrigin v6",
+   "permissions": [ "unlimitedStorage", "storage", "cookies", "tabs", "http://*/*", "https://*/*" ],
+   "short_name": "AGOv6",
+   "version": "7.0.0",
+   "web_accessible_resources": [ "js/*.js", "skin/*", "loca/*.json" ]
+}
